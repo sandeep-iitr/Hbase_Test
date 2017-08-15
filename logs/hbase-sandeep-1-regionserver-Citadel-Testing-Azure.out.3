@@ -1,0 +1,20 @@
+[Fatal Error] hbase-site.xml:32:3: The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+Exception in thread "main" java.lang.RuntimeException: org.xml.sax.SAXParseException; systemId: file:/home/sandeep/Citadel-Testing/Hbase/hbase-1.2.6/conf/hbase-site.xml; lineNumber: 32; columnNumber: 3; The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2348)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2205)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2112)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:858)
+	at org.apache.hadoop.conf.Configuration.getTrimmed(Configuration.java:877)
+	at org.apache.hadoop.conf.Configuration.getBoolean(Configuration.java:1278)
+	at org.apache.hadoop.hbase.HBaseConfiguration.checkDefaultsVersion(HBaseConfiguration.java:67)
+	at org.apache.hadoop.hbase.HBaseConfiguration.addHbaseResources(HBaseConfiguration.java:81)
+	at org.apache.hadoop.hbase.HBaseConfiguration.create(HBaseConfiguration.java:96)
+	at org.apache.hadoop.hbase.regionserver.HRegionServer.main(HRegionServer.java:2692)
+Caused by: org.xml.sax.SAXParseException; systemId: file:/home/sandeep/Citadel-Testing/Hbase/hbase-1.2.6/conf/hbase-site.xml; lineNumber: 32; columnNumber: 3; The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:257)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2183)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:2171)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2242)
+	... 9 more

@@ -1,0 +1,16 @@
+OpenJDK 64-Bit Server VM warning: ignoring option PermSize=128m; support was removed in 8.0
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+Exception in thread "ProcedureExecutor-1" java.lang.RuntimeException: sync aborted
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.pushData(WALProcedureStore.java:487)
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.update(WALProcedureStore.java:390)
+	at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execProcedure(ProcedureExecutor.java:1234)
+	at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:942)
+	at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:895)
+	at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.access$400(ProcedureExecutor.java:77)
+	at org.apache.hadoop.hbase.procedure2.ProcedureExecutor$2.run(ProcedureExecutor.java:497)
+Caused by: java.lang.RuntimeException: unable to roll the log
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.rollWriterOrDie(WALProcedureStore.java:645)
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.syncSlots(WALProcedureStore.java:596)
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.syncLoop(WALProcedureStore.java:559)
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore.access$000(WALProcedureStore.java:66)
+	at org.apache.hadoop.hbase.procedure2.store.wal.WALProcedureStore$1.run(WALProcedureStore.java:175)
